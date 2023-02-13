@@ -1,5 +1,4 @@
 @charset "UTF-8";
-/*general*/
 @font-face {
   font-family: "Roboto";
   src: url("/fonts/Roboto-Regular.ttf");
@@ -50,6 +49,66 @@ h1, h2 {
   background-color: silver;
 }
 
+.loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #FFF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.spinner-conteneur {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  background: white;
+  animation: 3s linear loader;
+  z-index: -5;
+  visibility: hidden;
+}
+
+.spinner {
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #3498db;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1.5s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+    visibility: hidden;
+  }
+}
+@keyframes loader {
+  0% {
+    z-index: 5;
+    visibility: visible;
+  }
+  80% {
+    opacity: 20%;
+  }
+  100% {
+    z-index: -5;
+    visibility: hidden;
+    opacity: 0%;
+  }
+}
 /*présentation du resto*/
 .presentation {
   width: auto;
@@ -304,11 +363,12 @@ h1, h2 {
 
 .card-menu {
   width: 100%;
-  height: 1250px;
+  height: auto;
   background-color: #F2F2F2;
   margin-top: -30px;
   border-radius: 30px 30px 0 0;
-  position: absolute;
+  position: relative;
+  padding-bottom: 40px;
 }
 .card-menu .title-card {
   display: flex;
@@ -329,6 +389,7 @@ h1, h2 {
 }
 .card-menu .menu-card-title {
   padding-left: 5px;
+  animation: menu-card-body 0.5s linear forwards;
 }
 .card-menu .menu-card-title::after {
   content: "";
@@ -347,6 +408,30 @@ h1, h2 {
   background-color: #FFF;
   box-shadow: 3px 3px 3px 3px lightgray;
   overflow: hidden;
+  opacity: 0;
+  animation: menu-card-body linear forwards;
+}
+@keyframes menu-card-body {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+.card-menu .menu-card > .menu-card-body:nth-child(2) {
+  animation-duration: 0.6s;
+}
+.card-menu .menu-card > .menu-card-body:nth-child(3) {
+  animation-duration: 0.9s;
+}
+.card-menu .menu-card > .menu-card-body:nth-child(4) {
+  animation-duration: 1.2s;
+}
+.card-menu .menu-card > .menu-card-body:nth-child(5) {
+  animation-duration: 1.5s;
 }
 .card-menu .menu-card-body:hover .menu-card-favorite {
   width: 12%;

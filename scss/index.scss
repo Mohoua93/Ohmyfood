@@ -1,11 +1,9 @@
-/*general*/
-
-@font-face {
+@font-face{
     font-family: "Roboto";
     src: url("/fonts/Roboto-Regular.ttf");
   }
 
-@font-face {
+@font-face{
     font-family: "Shrikhand";
     src: url("/fonts/Shrikhand-Regular.ttf");
   }
@@ -53,6 +51,54 @@ h1, h2 {
     font-weight: bold;
     background-color: silver;
 }
+
+.loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #FFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+  }
+
+  .spinner-conteneur {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    background: white;
+    animation: 3s linear loader;
+    z-index: -5;
+    visibility: hidden;
+  }
+  
+  .spinner {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #3498db;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1.5s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); visibility: hidden }
+  }
+
+  @keyframes loader {
+    0% { z-index: 5; visibility: visible; }
+    80% { opacity: 20%;}
+    100% { z-index: -5; visibility: hidden; opacity: 0%;}
+  }
 
 /*présentation du resto*/
 
@@ -324,11 +370,12 @@ h1, h2 {
 
   .card-menu{
     width: 100%;
-    height: 1250px;
+    height: auto;
     background-color: #F2F2F2;
     margin-top: -30px;
     border-radius: 30px 30px 0 0;
-    position: absolute;
+    position: relative;
+    padding-bottom: 40px;
     .title-card{
         display: flex;
         flex-direction: row;
@@ -348,12 +395,15 @@ h1, h2 {
     }
     .menu-card-title{
        padding-left: 5px;
+       animation: menu-card-body 0.5s linear forwards;
        &::after{
         content: "";
         width: 40px;
         border: 2px solid #99E2D0;
         display: block;
-       }
+
+
+    }
     }
     .menu-card-body{
         padding-left: 5px;
@@ -366,7 +416,23 @@ h1, h2 {
         background-color: #FFF;
         box-shadow: 3px 3px 3px 3px lightgray;
         overflow: hidden;
+        opacity: 0;
+        animation: menu-card-body linear forwards;
+        
+        @keyframes menu-card-body{
+            from {opacity: 0; transform: translateY(100%);}
+              to {opacity: 1; transform: translateY(0%);}
+        }   
     }
+
+    @for $i from 2 through 5 {
+        
+        .menu-card>.menu-card-body:nth-child(#{$i}) {
+            animation-duration: #{$i *0.3}s;
+        }
+    }
+
+
 
     .menu-card-body:hover .menu-card-favorite{
         width: 12%;
