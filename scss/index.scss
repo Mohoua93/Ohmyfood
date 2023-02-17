@@ -19,6 +19,8 @@ h1, h2{
 }
 
 
+
+
 /*logo*/
 
 .titre-ohmyfood {
@@ -224,7 +226,6 @@ h1, h2{
     display: block;
     text-decoration: none;
     color: #000;
-    height: 325px;
     border-radius: 25px;
     background-color: #FFF;
     margin-bottom: 20px;
@@ -232,7 +233,6 @@ h1, h2{
     .vignette-resto {
         width: 100%;
         position: relative;
-        height: 70%;
         overflow: hidden;
         display: flex;
         align-items: center;
@@ -251,6 +251,8 @@ h1, h2{
             border-radius: 20px;
             width: 100%;
             height: auto;
+            object-fit: cover;
+            max-height: 200px
         }
     }
 
@@ -258,7 +260,7 @@ h1, h2{
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        padding: 10px 0 0 20px;
+        padding: 10px 0 15px 20px;
         position: relative;
         
         
@@ -275,8 +277,8 @@ h1, h2{
     }
     .card-favorite{
         position: absolute;
-        right: 30px;
-        bottom: 10px;
+        right: 25px;
+        bottom: 25px;
         font-size: 30px;
     }
     .card-favorited{
@@ -426,25 +428,39 @@ h1, h2{
 
 
 
-    .menu-card-body:hover .menu-card-favorite{
-        width: 12%;
-        color: #FFF;
+    .menu-card-body:hover {
+        .menu-card-favorite{
+            width: 20%;
+            color: #FFF;
+        }
+        .menu-card-text{
+            width: 60%;
+        }
+        
+        
     }
     .menu-card-text{
         display: flex;
         flex-direction: column;
         width: 80%;
         padding-left: 10px;
+        transition: width 0.3s ease-in-out;
         h4{
             margin-top: 0;
             margin-bottom: 10px;
             font-size: 18px;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
 
         }
         p{
             margin: 5px 0;
             font-weight: 400;
-            font-size: 14px
+            font-size: 14px;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
         }
         
     }
@@ -495,6 +511,32 @@ h1, h2{
     }
   }
 
+/*tablette*/
+
+    
+    @media (min-width: 700px) {
+        .restaurants{
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
 
 
+        }
 
+        .card-restaurant{
+            width: 45%;
+        }
+
+    
+}
+
+/*desktop*/
+
+@media  (min-width: 990px) {
+    
+    .card-restaurant{
+        width: 20%;
+    }
+
+}

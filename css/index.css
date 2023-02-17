@@ -226,7 +226,6 @@ h1, h2 {
   display: block;
   text-decoration: none;
   color: #000;
-  height: 325px;
   border-radius: 25px;
   background-color: #FFF;
   margin-bottom: 20px;
@@ -234,7 +233,6 @@ h1, h2 {
 .card-restaurant .vignette-resto {
   width: 100%;
   position: relative;
-  height: 70%;
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -253,12 +251,14 @@ h1, h2 {
   border-radius: 20px;
   width: 100%;
   height: auto;
+  object-fit: cover;
+  max-height: 200px;
 }
 .card-restaurant .resto-localisation {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 10px 0 0 20px;
+  padding: 10px 0 15px 20px;
   position: relative;
 }
 .card-restaurant .nom-du-resto {
@@ -271,8 +271,8 @@ h1, h2 {
 }
 .card-restaurant .card-favorite {
   position: absolute;
-  right: 30px;
-  bottom: 10px;
+  right: 25px;
+  bottom: 25px;
   font-size: 30px;
 }
 .card-restaurant .card-favorited {
@@ -423,24 +423,34 @@ h1, h2 {
   animation-duration: 1.5s;
 }
 .card-menu .menu-card-body:hover .menu-card-favorite {
-  width: 12%;
+  width: 20%;
   color: #FFF;
+}
+.card-menu .menu-card-body:hover .menu-card-text {
+  width: 60%;
 }
 .card-menu .menu-card-text {
   display: flex;
   flex-direction: column;
   width: 80%;
   padding-left: 10px;
+  transition: width 0.3s ease-in-out;
 }
 .card-menu .menu-card-text h4 {
   margin-top: 0;
   margin-bottom: 10px;
   font-size: 18px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 .card-menu .menu-card-text p {
   margin: 5px 0;
   font-weight: 400;
   font-size: 14px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 .card-menu .menu-card-favorite {
   width: 0%;
@@ -481,6 +491,25 @@ h1, h2 {
 .card-menu .buttom-commander:hover {
   background: linear-gradient(170deg, rgba(255, 121, 218, 0.6784313725), rgba(147, 86, 220, 0.7294117647));
   box-shadow: 1px 5px 5px 1px rgba(0, 0, 0, 0.3490196078);
+}
+
+/*tablette*/
+@media (min-width: 700px) {
+  .restaurants {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .card-restaurant {
+    width: 45%;
+  }
+}
+/*desktop*/
+@media (min-width: 990px) {
+  .card-restaurant {
+    width: 20%;
+  }
 }
 
 /*# sourceMappingURL=index.css.map */
