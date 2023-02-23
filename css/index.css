@@ -141,7 +141,6 @@ h1, h2 {
   padding: 20px;
   margin-top: 35px;
   font-size: 20px;
-  transition: background 1000ms linear;
 }
 
 /*fonctinnement*/
@@ -471,7 +470,7 @@ h1, h2 {
   display: flex;
   justify-content: center;
 }
-.card-menu .buttom-commander {
+.card-menu .commander {
   width: 50%;
   height: 60px;
   display: flex;
@@ -488,7 +487,7 @@ h1, h2 {
   border: none;
   cursor: pointer;
 }
-.card-menu .buttom-commander:hover {
+.card-menu .commander:hover {
   background: linear-gradient(170deg, rgba(255, 121, 218, 0.6784313725), rgba(147, 86, 220, 0.7294117647));
   box-shadow: 1px 5px 5px 1px rgba(0, 0, 0, 0.3490196078);
 }
@@ -504,11 +503,49 @@ h1, h2 {
   .card-restaurant {
     width: 45%;
   }
+  .card-menu .menu-card-body {
+    padding: 0 0 1px 1px;
+  }
+  .button {
+    display: flex;
+    justify-content: center;
+    padding-right: 70px;
+  }
 }
 /*desktop*/
 @media (min-width: 990px) {
   .card-restaurant {
     width: 20%;
+  }
+  .img {
+    max-height: 200px;
+  }
+  .card-restaurant .nom-du-resto {
+    font-size: initial;
+  }
+  .card-restaurant .card-favorite {
+    right: 12px;
+    bottom: 16px;
+    font-size: 25px;
+  }
+  .card-menu .menu {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    padding-left: 20px;
+  }
+  .button {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  .card-restaurant .vignette-resto .nouveau {
+    position: absolute;
+    right: 10px;
+    top: 20px;
+  }
+  .card-menu .menu-card-body {
+    width: 315px;
   }
 }
 
