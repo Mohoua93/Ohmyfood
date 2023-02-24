@@ -522,7 +522,7 @@ h1, h2 {
   .card-menu .menu {
     display: flex;
     flex-direction: row;
-    gap: 10px;
+    gap: 20px;
   }
   .card-restaurant .vignette-resto .nouveau {
     position: absolute;
