@@ -251,7 +251,8 @@ h1, h2{
             width: 100%;
             height: auto;
             object-fit: cover;
-            max-height: 200px
+            object-position: 0 60%;
+            max-height: 200px;
         }
     }
 
@@ -282,8 +283,8 @@ h1, h2{
     }
     .card-favorited{
         position: absolute;
-        right: 30px;
-        bottom: 10px;
+        right: 25px;
+        bottom: 25px;
         font-size: 30px;
         background: linear-gradient(330deg, #ff79da, #9356dc);
         color: transparent;
@@ -491,13 +492,8 @@ h1, h2{
     .commander{
         width: 50%;
         height: 60px;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
         background: linear-gradient(170deg, #ff79da, #9356dc);
         color: #FFF;
-        margin-left: 120px;
         margin-top: 50px;
         border-radius: 40px;
         transition: background 1000ms linear;
@@ -510,6 +506,11 @@ h1, h2{
         cursor: pointer;
     }
   }
+
+    .button{
+    display: flex;
+    justify-content: center;
+}
 
 /*tablette*/
 
@@ -532,13 +533,6 @@ h1, h2{
         .card-menu .menu-card-body{
             padding: 0 0 1px 1px;
         }
-
-        .button{
-            display: flex;
-            justify-content: center;
-            padding-right: 70px;
-        }
-
     
 }
 
@@ -558,24 +552,13 @@ h1, h2{
         font-size: initial;
     }
 
-    .card-restaurant .card-favorite{
-        right: 12px;
-        bottom: 16px;
-        font-size: 25px;
-    }
-
     .card-menu .menu{
         display: flex;
         flex-direction: row;
         gap: 10px;
-        padding-left: 20px;
     }
 
-    .button{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-    }
+    
 
     .card-restaurant .vignette-resto .nouveau{
         position: absolute;
@@ -584,6 +567,14 @@ h1, h2{
     }
 
     .card-menu .menu-card-body {
-        width: 315px
+        width: 100%
+    }
+
+    .menu-card{
+        width: 33%;
+    }
+
+    .card-restaurant .vignette-resto img{
+        max-height: 172px;
     }
 }

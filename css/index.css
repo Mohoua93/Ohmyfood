@@ -251,6 +251,7 @@ h1, h2 {
   width: 100%;
   height: auto;
   object-fit: cover;
+  object-position: 0 60%;
   max-height: 200px;
 }
 .card-restaurant .resto-localisation {
@@ -276,8 +277,8 @@ h1, h2 {
 }
 .card-restaurant .card-favorited {
   position: absolute;
-  right: 30px;
-  bottom: 10px;
+  right: 25px;
+  bottom: 25px;
   font-size: 30px;
   background: linear-gradient(330deg, #ff79da, #9356dc);
   color: transparent;
@@ -473,13 +474,8 @@ h1, h2 {
 .card-menu .commander {
   width: 50%;
   height: 60px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
   background: linear-gradient(170deg, #ff79da, #9356dc);
   color: #FFF;
-  margin-left: 120px;
   margin-top: 50px;
   border-radius: 40px;
   transition: background 1000ms linear;
@@ -490,6 +486,11 @@ h1, h2 {
 .card-menu .commander:hover {
   background: linear-gradient(170deg, rgba(255, 121, 218, 0.6784313725), rgba(147, 86, 220, 0.7294117647));
   box-shadow: 1px 5px 5px 1px rgba(0, 0, 0, 0.3490196078);
+}
+
+.button {
+  display: flex;
+  justify-content: center;
 }
 
 /*tablette*/
@@ -506,11 +507,6 @@ h1, h2 {
   .card-menu .menu-card-body {
     padding: 0 0 1px 1px;
   }
-  .button {
-    display: flex;
-    justify-content: center;
-    padding-right: 70px;
-  }
 }
 /*desktop*/
 @media (min-width: 990px) {
@@ -523,21 +519,10 @@ h1, h2 {
   .card-restaurant .nom-du-resto {
     font-size: initial;
   }
-  .card-restaurant .card-favorite {
-    right: 12px;
-    bottom: 16px;
-    font-size: 25px;
-  }
   .card-menu .menu {
     display: flex;
     flex-direction: row;
     gap: 10px;
-    padding-left: 20px;
-  }
-  .button {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
   }
   .card-restaurant .vignette-resto .nouveau {
     position: absolute;
@@ -545,7 +530,13 @@ h1, h2 {
     top: 20px;
   }
   .card-menu .menu-card-body {
-    width: 315px;
+    width: 100%;
+  }
+  .menu-card {
+    width: 33%;
+  }
+  .card-restaurant .vignette-resto img {
+    max-height: 172px;
   }
 }
 
