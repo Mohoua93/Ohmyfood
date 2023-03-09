@@ -66,7 +66,7 @@ h1, h2{
     height: 100%;
     width: 100%;
     background: white;
-    animation: 3s linear loader;
+    animation: 5s linear loader;
     z-index: -5;
     visibility: hidden;
   }
@@ -77,7 +77,7 @@ h1, h2{
     border-radius: 50%;
     width: 50px;
     height: 50px;
-    animation: spin 1.5s linear infinite;
+    animation: spin 5s linear infinite;
   }
   
   @keyframes spin {
@@ -87,7 +87,7 @@ h1, h2{
 
   @keyframes loader {
     0% { z-index: 5; visibility: visible; }
-    80% { opacity: 20%;}
+    80% { opacity: 90%;}
     100% { z-index: -5; visibility: hidden; opacity: 0%;}
   }
 
